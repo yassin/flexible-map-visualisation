@@ -1,3 +1,5 @@
+image: node:13
+
 stages:
   - build
   - package
