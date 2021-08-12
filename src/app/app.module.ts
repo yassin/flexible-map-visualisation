@@ -13,6 +13,10 @@ import {UploadDetailsComponent} from "./upload-details/upload-details.component"
 import {UploadFormComponent} from "./upload-form/upload-form.component";
 import {UploadListComponent} from "./upload-list/upload-list.component";
 import {environment} from "../environments/environment";
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { SlidebarComponent } from './slidebar/slidebar.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,10 @@ import {environment} from "../environments/environment";
     GoogleMapsDemoComponent,
     UploadDetailsComponent,
     UploadFormComponent,
-    UploadListComponent
+    UploadListComponent,
+    HeaderComponent,
+    FooterComponent,
+    SlidebarComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +37,8 @@ import {environment} from "../environments/environment";
     HttpClientJsonpModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
