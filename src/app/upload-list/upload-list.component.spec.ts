@@ -1,20 +1,20 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import {GoogleMapsDemoComponent} from './google-maps-demo.component';
+import {UploadListComponent} from './upload-list.component';
 
-describe('GoogleMapsDemoComponent', () => {
-  let component: GoogleMapsDemoComponent;
-  let fixture: ComponentFixture<GoogleMapsDemoComponent>;
+describe('UploadListComponent', () => {
+  let component: UploadListComponent;
+  let fixture: ComponentFixture<UploadListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GoogleMapsDemoComponent ]
+      declarations: [ UploadListComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GoogleMapsDemoComponent);
+    fixture = TestBed.createComponent(UploadListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

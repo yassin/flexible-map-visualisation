@@ -1,5 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core'
 import {GoogleMap, MapInfoWindow, MapMarker} from '@angular/google-maps'
+import {FileUploadService} from "../shared/services/file-upload.service";
 
 
 @Component({
@@ -7,8 +8,12 @@ import {GoogleMap, MapInfoWindow, MapMarker} from '@angular/google-maps'
   templateUrl: './google-maps-demo.component.html',
 })
 export class GoogleMapsDemoComponent implements OnInit {
+
   @ViewChild(GoogleMap, {static: false}) map: GoogleMap
   @ViewChild(MapInfoWindow, {static: false}) info: MapInfoWindow
+
+  constructor(private fileUploadService: FileUploadService) {
+  }
 
   zoom = 12
   center: google.maps.LatLngLiteral
@@ -20,7 +25,7 @@ export class GoogleMapsDemoComponent implements OnInit {
     maxZoom: 15,
     minZoom: 8,
   }
-  markers: Array<any> = []
+  markers: Array<any> = [];
   infoContent = ''
 
   ngOnInit() {
@@ -29,7 +34,10 @@ export class GoogleMapsDemoComponent implements OnInit {
         lat: position.coords.latitude,
         lng: position.coords.longitude,
       }
-    })
+    });
+    this.fileUploadService.subject.subscribe(res => {
+      this.markers = res;
+    });
   }
 
   zoomIn() {
@@ -52,28 +60,11 @@ export class GoogleMapsDemoComponent implements OnInit {
   }
 
   addMarker() {
-
-
-    this.markers.push({
-      position: {
-        lat: this.center.lat + ((Math.random() - 0.5) * 2) / 10,
-        lng: this.center.lng + ((Math.random() - 0.5) * 2) / 10,
-      },
-      label: {
-        // @ts-ignore
-        color: '#' + parseInt(Math.random() * 0xffffff).toString(16),
-        text: 'Marker label ' + (this.markers.length + 1),
-      },
-      title: 'Marker title ' + (this.markers.length + 1),
-      info: 'Marker info ' + (this.markers.length + 1),
-      //options: {
-        //animation: google.maps.Animation.BOUNCE,
-      //},
-    })
+    //this.fileUploadService.getSelectedDataMap().forEach(element => this.markers.push(element));
   }
 
   openInfo(marker: MapMarker,
-           content:any) {
+           content: any) {
     this.infoContent = content
     this.info.open(marker)
   }
