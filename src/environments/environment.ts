@@ -1,5 +1,6 @@
 export const environment = {
   production: false,
+
   firebase: {
     apiKey: 'xxx',
     authDomain: 'bezkoder-firebase.firebaseapp.com',
@@ -10,3 +11,4 @@ export const environment = {
     appId: 'xxx'
   }
 };
+
