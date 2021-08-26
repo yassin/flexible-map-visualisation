@@ -13,10 +13,10 @@ import {UploadDetailsComponent} from "./upload-details/upload-details.component"
 import {UploadFormComponent} from "./upload-form/upload-form.component";
 import {UploadListComponent} from "./upload-list/upload-list.component";
 import {environment} from "../environments/environment";
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SlidebarComponent } from './slidebar/slidebar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -38,7 +38,7 @@ import { SlidebarComponent } from './slidebar/slidebar.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireStorageModule,
-    NgbModule
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
