@@ -1,8 +1,8 @@
-<div class="form-check">
-  <input class="form-check-input" (change)="selectFileToShow($event,index)" type="checkbox">
-  <a href="{{ fileUpload.url }}">{{ fileUpload.name }}</a>
-  <button (click)="deleteFileUpload(fileUpload)"
-          class="btn btn-danger btn-sm" style="float: right">
+<div>
+  <mat-checkbox color="primary" (change)="selectFileToShow($event,index)"></mat-checkbox>
+  <a class="cdk-text-field-autofill-monitored" href="{{ fileUpload.url }}">{{ fileUpload.name }}</a>
+  <button mat-flat-button (click)="deleteFileUpload(fileUpload)"
+         color="primary">
     Delete
   </button>
 </div>

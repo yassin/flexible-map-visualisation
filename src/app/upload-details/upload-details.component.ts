@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {FileUploadService} from 'src/app/shared/services/file-upload.service';
 import {FileUpload} from 'src/app/shared/models/file-upload.model';
+import {MatCheckboxChange} from "@angular/material/checkbox";
 
 @Component({
   selector: 'app-upload-details',
@@ -21,9 +22,9 @@ export class UploadDetailsComponent implements OnInit {
     this.uploadService.deleteFile(fileUpload);
   }
 
-  selectFileToShow(event: Event, index: number) {
+  selectFileToShow(event: MatCheckboxChange, index: number) {
     // @ts-ignore
-    if (event.target.checked) {
+    if (event.checked) {
       this.uploadService.selectDataMap(index);
     } else {
       this.uploadService.removeDataMap(index);

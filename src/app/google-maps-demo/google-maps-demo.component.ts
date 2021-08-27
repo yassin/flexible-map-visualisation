@@ -15,13 +15,14 @@ export class GoogleMapsDemoComponent implements OnInit {
   constructor(private fileUploadService: FileUploadService) {
   }
 
-  zoom = 12
+  zoom =9
   center: google.maps.LatLngLiteral
   options: google.maps.MapOptions = {
-    zoomControl: false,
-    scrollwheel: false,
-    disableDoubleClickZoom: true,
-    mapTypeId: 'hybrid',
+    zoomControl: true,
+    scrollwheel: true,
+    disableDoubleClickZoom: false,
+    //mapTypeId: 'hybrid',
+
     maxZoom: 15,
     minZoom: 8,
   }
@@ -40,13 +41,6 @@ export class GoogleMapsDemoComponent implements OnInit {
     });
   }
 
-  zoomIn() {
-    this.zoom++
-  }
-
-  zoomOut() {
-    this.zoom--
-  }
 
   click(event: google.maps.MapMouseEvent) {
     // Close the current InfoWindow.
@@ -55,13 +49,7 @@ export class GoogleMapsDemoComponent implements OnInit {
     //this.info.open(map);
   }
 
-  logCenter() {
-    console.log(JSON.stringify(this.map.getCenter()))
-  }
 
-  addMarker() {
-    //this.fileUploadService.getSelectedDataMap().forEach(element => this.markers.push(element));
-  }
 
   openInfo(marker: MapMarker,
            content: any) {

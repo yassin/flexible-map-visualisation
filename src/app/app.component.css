@@ -1,3 +1,4 @@
-.pre-scrollable{
-  max-height: max-content;
+.mat-toolbar {
+  justify-content: center;
 }
+

@@ -32,6 +32,9 @@ export class FileUploadService {
           fileUpload.url = downloadURL;
           fileUpload.name = fileUpload.file.name;
           this.saveFileData(fileUpload);
+        },error => {
+          fileUpload.name = fileUpload.file.name;
+          this.saveFileData(fileUpload);
         });
       })
     ).subscribe();

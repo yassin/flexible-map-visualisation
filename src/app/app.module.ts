@@ -12,11 +12,22 @@ import {GoogleMapsDemoComponent} from "./google-maps-demo/google-maps-demo.compo
 import {UploadDetailsComponent} from "./upload-details/upload-details.component";
 import {UploadFormComponent} from "./upload-form/upload-form.component";
 import {UploadListComponent} from "./upload-list/upload-list.component";
+
 import {environment} from "../environments/environment";
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { SlidebarComponent } from './slidebar/slidebar.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatSidenavModule} from "@angular/material/sidenav";
+import {MatIconModule} from "@angular/material/icon";
+import {MatGridListModule} from "@angular/material/grid-list";
+import {MatCardModule} from "@angular/material/card";
+import {AppRoutingModule} from "./app-routing.module";
+import {MatListModule} from "@angular/material/list";
+import {MatProgressBarModule} from "@angular/material/progress-bar";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from "@angular/material/button";
+import {MatCheckboxModule} from "@angular/material/checkbox";
+
 
 @NgModule({
   declarations: [
@@ -25,9 +36,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     UploadDetailsComponent,
     UploadFormComponent,
     UploadListComponent,
-    HeaderComponent,
-    FooterComponent,
-    SlidebarComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +46,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireStorageModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatGridListModule,
+    MatCardModule,
+    AppRoutingModule,
+    MatListModule,
+    MatProgressBarModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
