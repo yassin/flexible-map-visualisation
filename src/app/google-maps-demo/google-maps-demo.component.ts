@@ -15,15 +15,13 @@ export class GoogleMapsDemoComponent implements OnInit {
   constructor(private fileUploadService: FileUploadService) {
   }
 
-  zoom =9
+  zoom = 9
   center: google.maps.LatLngLiteral
   options: google.maps.MapOptions = {
     zoomControl: true,
     scrollwheel: true,
     disableDoubleClickZoom: false,
-    //mapTypeId: 'hybrid',
-
-    maxZoom: 15,
+    maxZoom: 5000,
     minZoom: 8,
   }
   markers: Array<any> = [];
@@ -31,9 +29,12 @@ export class GoogleMapsDemoComponent implements OnInit {
 
   ngOnInit() {
     navigator.geolocation.getCurrentPosition((position) => {
+      // @ts-ignore
       this.center = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude,
+        // @ts-ignore
+        lat: "49.59913037902855",
+        // @ts-ignore
+        lng: "6.133036534410118",
       }
     });
     this.fileUploadService.subject.subscribe(res => {
